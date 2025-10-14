@@ -1,0 +1,101 @@
+# Claude Code
+.claude/
+CLAUDE.md
+*.local
+*.local/
+.local
+.local/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Environment Variables (API Keys, Secrets)
+.env
+.env.local
+.env.*.local
+config/secrets.yaml
+config/api_keys.json
+*.key
+*.pem
+*.crt
+secrets/
+
+# Data Files
+data/raw/
+data/processed/
+data/cache/
+*.db
+*.sqlite
+*.db-journal
+
+# Logs
+logs/
+*.log
+log/
+
+# Model Files (large binary files)
+models/saved/
+models/checkpoints/
+*.h5
+*.pkl
+*.pth
+*.ckpt
+
+# Jupyter Notebooks checkpoints
+.ipynb_checkpoints/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# Backtest Results
+backtest_results/
+results/
+
+# Temporary Files
+tmp/
+temp/
+*.tmp
+
+# MacOS
+.DS_Store
+
+# Windows
+Thumbs.db
+desktop.ini
