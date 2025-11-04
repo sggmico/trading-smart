@@ -1,51 +1,51 @@
 # Trading APIs
-python-binance==1.0.19
-ccxt==4.2.25
+python-binance>=1.0.19
+ccxt>=4.2.0
 
 # Data Processing
-pandas==2.2.0
-numpy==1.26.3
-ta-lib==0.4.28
+pandas>=2.2.0
+numpy>=1.26.0
+ta-lib>=0.4.28
 
-# Machine Learning
-scikit-learn==1.4.0
-tensorflow==2.15.0
-torch==2.2.0
-xgboost==2.0.3
-lightgbm==4.3.0
+# Machine Learning (commented out for Python 3.13 compatibility issues)
+# scikit-learn>=1.4.0
+# tensorflow>=2.20.0
+# torch>=2.2.0
+# xgboost>=2.0.3
+# lightgbm>=4.3.0
 
-# Backtesting
-backtrader==1.9.78.123
-vectorbt==0.26.2
+# Backtesting (commented out for Python 3.13 compatibility issues)
+# backtrader>=1.9.78.123
+# vectorbt>=0.26.2
 
 # Visualization
-matplotlib==3.8.2
-plotly==5.18.0
-seaborn==0.13.2
+matplotlib>=3.8.0
+plotly>=5.18.0
+seaborn>=0.13.0
 
 # Database
-influxdb-client==1.40.0
-psycopg2-binary==2.9.9
-sqlalchemy==2.0.25
+influxdb-client>=1.40.0
+# psycopg2-binary>=2.9.10  # Has compatibility issues with Python 3.13
+sqlalchemy>=2.0.25
 
 # Utilities
-python-dotenv==1.0.1
-pyyaml==6.0.1
-requests==2.31.0
-websocket-client==1.7.0
+python-dotenv>=1.0.0
+pyyaml>=6.0
+requests>=2.31.0
+websocket-client>=1.7.0
 
 # Logging & Monitoring
-loguru==0.7.2
-prometheus-client==0.19.0
+loguru>=0.7.0
+prometheus-client>=0.19.0
 
 # Notification
-python-telegram-bot==20.8
+python-telegram-bot>=20.8
 
 # Development
-pytest==8.0.0
-pytest-cov==4.1.0
-black==24.1.1
-flake8==7.0.0
-mypy==1.8.0
-jupyter==1.0.0
-ipykernel==6.29.0
+pytest>=8.0.0
+pytest-cov>=4.1.0
+black>=24.0.0
+flake8>=7.0.0
+mypy>=1.8.0
+jupyter>=1.0.0
+ipykernel>=6.29.0

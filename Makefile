@@ -1,7 +1,13 @@
-.PHONY: help install install-dev test lint format clean run
+.PHONY: help venv install install-dev test lint format clean run
+
+VENV := venv
+PYTHON_VERSION := 3.11
+PYTHON := $(VENV)/bin/python3
+PIP := $(VENV)/bin/pip3
 
 help:
 	@echo "Available commands:"
+	@echo "  make venv         - Create virtual environment"
 	@echo "  make install      - Install dependencies"
 	@echo "  make install-dev  - Install dev dependencies"
 	@echo "  make test         - Run tests"
@@ -10,22 +16,33 @@ help:
 	@echo "  make clean        - Clean temporary files"
 	@echo "  make run          - Run the trading bot"
 
-install:
-	pip install -r requirements.txt
+venv:
+	@echo "Checking for Python $(PYTHON_VERSION)..."
+	@if command -v python$(PYTHON_VERSION) >/dev/null 2>&1; then \
+		python$(PYTHON_VERSION) -m venv $(VENV); \
+		echo "Virtual environment created with Python $(PYTHON_VERSION)"; \
+	else \
+		echo "Python $(PYTHON_VERSION) not found. Using system python3..."; \
+		python3 -m venv $(VENV); \
+	fi
+	@echo "Activate with: source $(VENV)/bin/activate"
 
-install-dev:
-	pip install -r requirements.txt
-	pip install -e ".[dev]"
+install: venv
+	$(PIP) install -r requirements.txt
+
+install-dev: venv
+	$(PIP) install -r requirements.txt
+	$(PIP) install -e ".[dev]"
 
 test:
-	pytest
+	$(PYTHON) -m pytest
 
 lint:
-	flake8 src/ tests/
-	mypy src/
+	$(PYTHON) -m flake8 src/ tests/
+	$(PYTHON) -m mypy src/
 
 format:
-	black src/ tests/
+	$(PYTHON) -m black src/ tests/
 
 clean:
 	find . -type d -name "__pycache__" -exec rm -rf {} +
@@ -37,6 +54,7 @@ clean:
 	rm -rf dist
 	rm -rf build
 	rm -rf *.egg-info
+	rm -rf $(VENV)
 
 run:
-	python -m src.main
+	$(PYTHON) -m src.main
